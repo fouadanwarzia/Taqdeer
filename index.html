@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1838" />
+  <title>Taqdeer Manpower — Global Workforce & HR Consultancies</title>
+  <meta name="description" content="Taqdeer Manpower — a trusted global workforce partner since the late 1960s. Ethical recruitment, compliant deployment and worker welfare across the Middle East, Europe and beyond." />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Three.js + GSAP — vendored locally (no CDN dependency at runtime) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "./vendor/three.module.js"
+    }
+  }
+  </script>
+  <script src="vendor/gsap.min.js" defer></script>
+  <script src="vendor/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader" class="loader">
+    <div class="loader__mark">
+      <span class="loader__t">T</span>
+    </div>
+    <div class="loader__bar"><span></span></div>
+    <p class="loader__text">Building your global network…</p>
+  </div>
+
+  <!-- Cursor glow -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="nav__logo" aria-label="Taqdeer Manpower home">
+      <svg viewBox="0 0 360 70" class="logo-svg" role="img" aria-label="Taqdeer Manpower">
+        <text x="0" y="40" class="logo-svg__taq">TAQDEER</text>
+        <text x="208" y="40" class="logo-svg__man">MANPOWER</text>
+        <text x="1" y="60" class="logo-svg__sub">HUMAN RESOURCES CONSULTANCIES CO. L.L.C</text>
+      </svg>
+    </a>
+
+    <nav class="nav__links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#purpose">Purpose</a>
+      <a href="#footprint">Global Reach</a>
+      <a href="#industries">Industries</a>
+      <a href="#trades">Trades</a>
+      <a href="#edge">Our Edge</a>
+      <a href="#contact" class="nav__cta">Get in touch</a>
+    </nav>
+
+    <button class="nav__burger" id="burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas id="globe-canvas" class="hero__canvas"></canvas>
+    <div class="hero__veil"></div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal">EST. LATE 1960s · DUBAI · UAE</p>
+      <h1 class="hero__title">
+        <span class="reveal-line"><span>Connecting global</span></span>
+        <span class="reveal-line"><span>talent to the world's</span></span>
+        <span class="reveal-line"><span><em>most iconic</em> projects.</span></span>
+      </h1>
+      <p class="hero__lead reveal">
+        Taqdeer Manpower is a multi-country, multi-sector workforce conglomerate —
+        delivering compliant, ethical and on-time deployment across the Middle East, Europe and beyond.
+      </p>
+      <div class="hero__actions reveal">
+        <a href="#footprint" class="btn btn--gold">Explore our reach</a>
+        <a href="#contact" class="btn btn--ghost">Partner with us</a>
+      </div>
+
+      <div class="hero__ticker reveal">
+        <div class="ticker">
+          <span>Burj Khalifa</span><i>•</i><span>Burj Al Arab</span><i>•</i><span>Ferrari World</span><i>•</i>
+          <span>NEOM</span><i>•</i><span>Walmart Projects</span><i>•</i><span>ALEC Holdings</span><i>•</i>
+          <span>Burj Khalifa</span><i>•</i><span>Burj Al Arab</span><i>•</i><span>Ferrari World</span><i>•</i>
+          <span>NEOM</span><i>•</i><span>Walmart Projects</span><i>•</i><span>ALEC Holdings</span><i>•</i>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="hero__scroll" aria-label="Scroll down">
+      <span class="hero__mouse"></span>
+      <em>Scroll</em>
+    </a>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="container about__grid">
+      <div class="about__head">
+        <span class="kicker reveal">01 — Who we are</span>
+        <h2 class="reveal">A trusted global partner, <span class="hl">built over five decades.</span></h2>
+      </div>
+      <div class="about__body">
+        <p class="reveal">
+          Established with humble beginnings in the late 1960s, our Group traces its roots to early
+          manpower and project-support operations in Libya and Iraq, in association with reputed
+          international contractors such as <strong>J&amp;P</strong>.
+        </p>
+        <p class="reveal">
+          By the late 1980s, the Group expanded into the Kingdom of Saudi Arabia and the United Arab
+          Emirates, laying the foundation for long-term partnerships across the Middle East, Europe
+          and beyond. Today we stand for <strong>scale, compliance, ethical sourcing, worker welfare</strong>
+          and on-time deployment.
+        </p>
+        <div class="about__chips reveal">
+          <span>Compliance-first</span>
+          <span>Ethical sourcing</span>
+          <span>Worker welfare</span>
+          <span>On-time deployment</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section stats" id="stats">
+    <div class="container stats__grid">
+      <div class="stat reveal">
+        <div class="stat__num" data-count="150" data-suffix="+">0</div>
+        <p>Dedicated internal staff across all locations</p>
+      </div>
+      <div class="stat reveal">
+        <div class="stat__num" data-count="15000" data-suffix="+">0</div>
+        <p>Active workforce database, readily available</p>
+      </div>
+      <div class="stat reveal">
+        <div class="stat__num" data-count="7000" data-suffix="+">0</div>
+        <p>Deployments across the EU, post-COVID</p>
+      </div>
+      <div class="stat reveal">
+        <div class="stat__num" data-count="100" data-suffix="+">0</div>
+        <p>National &amp; international client partnerships</p>
+      </div>
+    </div>
+    <p class="stats__note reveal"><span class="hl">15,000</span> deployments in a single year for ALEC Holdings alone.</p>
+  </section>
+
+  <!-- PURPOSE: Mission / Vision / Values -->
+  <section class="section purpose" id="purpose">
+    <div class="container">
+      <div class="section__head">
+        <span class="kicker reveal">02 — Our purpose</span>
+        <h2 class="reveal">More philanthropy <span class="hl">than profit.</span></h2>
+      </div>
+      <div class="purpose__grid">
+        <article class="card tilt reveal">
+          <div class="card__icon">◎</div>
+          <h3>Our Mission</h3>
+          <p>To deliver cost-effective, timely and compliant manpower solutions while uplifting workforce skills and livelihoods worldwide.</p>
+        </article>
+        <article class="card tilt reveal">
+          <div class="card__icon">✦</div>
+          <h3>Our Vision</h3>
+          <p>To be the most trusted global workforce partner — setting benchmarks in ethical recruitment, quality deployment and worker welfare.</p>
+        </article>
+        <article class="card tilt reveal">
+          <div class="card__icon">❖</div>
+          <h3>Core Values</h3>
+          <ul class="card__values">
+            <li>Integrity</li><li>Transparency</li><li>Safety First</li>
+            <li>Worker Welfare</li><li>Long-term Partnerships</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTPRINT (3D globe focus) -->
+  <section class="section footprint" id="footprint">
+    <canvas id="globe-canvas-2" class="footprint__canvas"></canvas>
+    <div class="container footprint__inner">
+      <div class="footprint__copy">
+        <span class="kicker reveal">03 — Global deployment footprint</span>
+        <h2 class="reveal">We move skilled people <span class="hl">where the world is building.</span></h2>
+        <p class="reveal">Successfully deployed across four continents — sourcing talent from ten nations and placing it on the projects defining tomorrow's skylines.</p>
+
+        <div class="footprint__cols reveal">
+          <div>
+            <h4>We deploy to</h4>
+            <ul class="taglist">
+              <li>Australia</li><li>USA</li><li>UK</li><li>KSA</li><li>UAE</li><li>Qatar</li>
+              <li>Oman</li><li>Bahrain</li><li>Kuwait</li><li>Poland</li><li>Serbia</li><li>Romania</li>
+            </ul>
+          </div>
+          <div>
+            <h4>We recruit from</h4>
+            <ul class="taglist taglist--gold">
+              <li>India</li><li>Pakistan</li><li>Bangladesh</li><li>Nepal</li><li>Sri Lanka</li>
+              <li>Philippines</li><li>Egypt</li><li>Uganda</li><li>Nigeria</li><li>Kenya</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANDMARK PROJECTS -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section__head">
+        <span class="kicker reveal">04 — Landmark projects supported</span>
+        <h2 class="reveal">Our people, <span class="hl">on the world's stage.</span></h2>
+      </div>
+      <div class="projects__grid">
+        <article class="project project--xl reveal" style="--i:0">
+          <span class="project__tag">Dubai, UAE</span>
+          <h3>Burj Khalifa</h3>
+          <p>The world's tallest building.</p>
+        </article>
+        <article class="project reveal" style="--i:1">
+          <span class="project__tag">Dubai, UAE</span>
+          <h3>Burj Al Arab</h3>
+        </article>
+        <article class="project reveal" style="--i:2">
+          <span class="project__tag">Abu Dhabi, UAE</span>
+          <h3>Ferrari World</h3>
+        </article>
+        <article class="project project--wide reveal" style="--i:3">
+          <span class="project__tag">Saudi Arabia</span>
+          <h3>NEOM</h3>
+          <p>The giga-project reimagining how we live.</p>
+        </article>
+        <article class="project reveal" style="--i:4">
+          <span class="project__tag">USA &amp; International</span>
+          <h3>Walmart Projects</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="section industries" id="industries">
+    <div class="container">
+      <div class="section__head">
+        <span class="kicker reveal">05 — Industries &amp; sectors served</span>
+        <h2 class="reveal">Complete coverage, <span class="hl">across the economy.</span></h2>
+      </div>
+      <div class="industries__grid">
+        <div class="ind reveal" style="--i:0"><i>⛽</i><span>Oil &amp; Gas</span></div>
+        <div class="ind reveal" style="--i:1"><i>🏗️</i><span>Construction &amp; Infrastructure</span></div>
+        <div class="ind reveal" style="--i:2"><i>⚙️</i><span>MEP &amp; Electro-Mechanical</span></div>
+        <div class="ind reveal" style="--i:3"><i>🏢</i><span>Facilities Management</span></div>
+        <div class="ind reveal" style="--i:4"><i>🏨</i><span>Hospitality, Hotels &amp; Resorts</span></div>
+        <div class="ind reveal" style="--i:5"><i>🏭</i><span>Food &amp; Manufacturing</span></div>
+        <div class="ind reveal" style="--i:6"><i>✈️</i><span>Aviation</span></div>
+        <div class="ind reveal" style="--i:7"><i>🚚</i><span>Logistics &amp; Delivery</span></div>
+        <div class="ind reveal" style="--i:8"><i>🥛</i><span>Dairy &amp; Food Processing</span></div>
+        <div class="ind reveal" style="--i:9"><i>🚢</i><span>Seaports &amp; Shipyards</span></div>
+        <div class="ind reveal" style="--i:10"><i>☀️</i><span>Solar &amp; Renewable Energy</span></div>
+        <div class="ind reveal" style="--i:11"><i>🌐</i><span>And beyond</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRADES -->
+  <section class="section trades" id="trades">
+    <div class="container">
+      <div class="section__head">
+        <span class="kicker reveal">06 — Trades &amp; skill categories</span>
+        <h2 class="reveal">Every trade, <span class="hl">tested and ready.</span></h2>
+        <p class="section__sub reveal">We supply complete trade coverage, including but not limited to:</p>
+      </div>
+      <div class="trades__marquee">
+        <div class="trades__track">
+          <span>Electricians</span><span>Plumbers</span><span>Masons</span><span>Steel Fixers</span>
+          <span>Carpenters</span><span>Welders</span><span>HVAC Technicians</span><span>Pipe Fitters</span>
+          <span>Scaffolders</span><span>Operators</span><span>Helpers &amp; General Workforce</span>
+          <span>Electricians</span><span>Plumbers</span><span>Masons</span><span>Steel Fixers</span>
+          <span>Carpenters</span><span>Welders</span><span>HVAC Technicians</span><span>Pipe Fitters</span>
+          <span>Scaffolders</span><span>Operators</span><span>Helpers &amp; General Workforce</span>
+        </div>
+      </div>
+      <div class="trades__marquee trades__marquee--rev">
+        <div class="trades__track">
+          <span>Pipe Fitters</span><span>Welders</span><span>Carpenters</span><span>Steel Fixers</span>
+          <span>Masons</span><span>Plumbers</span><span>Electricians</span><span>Operators</span>
+          <span>Scaffolders</span><span>HVAC Technicians</span><span>Helpers &amp; General Workforce</span>
+          <span>Pipe Fitters</span><span>Welders</span><span>Carpenters</span><span>Steel Fixers</span>
+          <span>Masons</span><span>Plumbers</span><span>Electricians</span><span>Operators</span>
+          <span>Scaffolders</span><span>HVAC Technicians</span><span>Helpers &amp; General Workforce</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDGE / Differentiators -->
+  <section class="section edge" id="edge">
+    <div class="container">
+      <div class="section__head">
+        <span class="kicker reveal">07 — Our key differentiators</span>
+        <h2 class="reveal">Why partners <span class="hl">choose Taqdeer.</span></h2>
+      </div>
+      <div class="edge__grid">
+        <article class="edge__card reveal">
+          <h3>Direct Sourcing Model</h3>
+          <p>Among the very few agencies in India that rely <strong>exclusively on direct candidate sourcing</strong>.</p>
+          <ul class="ticks">
+            <li>No sub-agents</li>
+            <li>No intermediaries</li>
+            <li>Ground-level recruitment for full transparency &amp; control</li>
+          </ul>
+        </article>
+        <article class="edge__card reveal">
+          <h3>Worker-First Philosophy</h3>
+          <p>For us, this business is <strong>more philanthropy than profit</strong>.</p>
+          <ul class="ticks">
+            <li>Worker welfare &amp; safety as top priority</li>
+            <li>Ethical recruitment practices</li>
+            <li>Zero exploitation policy</li>
+          </ul>
+        </article>
+        <article class="edge__card edge__card--wide reveal">
+          <h3>In-House Trade Test &amp; Training Centers</h3>
+          <p>HRBS &amp; Bhatia Trade Test Centers — an <strong>18,000+ sq. ft.</strong> fully air-conditioned facility equipped for multiple trades simultaneously, with complete tools and testing infrastructure at international standards.</p>
+          <ul class="ticks ticks--row">
+            <li>Free pre-deployment training</li>
+            <li>Higher productivity from day one</li>
+            <li>NSDC &amp; Punjab Skill Development tie-ups</li>
+            <li>PSB / NSDC accreditation in progress</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section process" id="process">
+    <div class="container">
+      <div class="section__head">
+        <span class="kicker reveal">08 — Recruitment, deployment &amp; support</span>
+        <h2 class="reveal">A process built <span class="hl">to be trusted.</span></h2>
+      </div>
+      <ol class="timeline">
+        <li class="reveal"><span class="timeline__no">01</span><h4>CV Screening</h4><p>Thorough vetting against role requirements.</p></li>
+        <li class="reveal"><span class="timeline__no">02</span><h4>In-Person Trade Tests &amp; Interviews</h4><p>Practical skill assessment plus Zoom interviews.</p></li>
+        <li class="reveal"><span class="timeline__no">03</span><h4>Candidate Briefing</h4><p>Job role, salary &amp; benefits, work culture and company policies.</p></li>
+        <li class="reveal"><span class="timeline__no">04</span><h4>On-Time Deployment</h4><p>Commitment to schedule, with free replacement if a candidate fails to travel after visa issuance.</p></li>
+        <li class="reveal"><span class="timeline__no">05</span><h4>24/7 Post-Deployment Support</h4><p>Resignation handling, termination cases, behavioral &amp; compliance issues.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="container contact__inner">
+      <div class="contact__copy">
+        <span class="kicker reveal">09 — Let's build together</span>
+        <h2 class="reveal">Ready to deploy <span class="hl">your workforce?</span></h2>
+        <p class="reveal">Tell us what you're building. We'll bring the people to build it — compliantly, ethically and on time.</p>
+        <a href="mailto:info@taqdeermanpower.com" class="btn btn--gold reveal">info@taqdeermanpower.com</a>
+      </div>
+      <div class="contact__cards">
+        <a class="contact__card reveal" href="https://www.google.com/maps/search/?api=1&query=Sheikh+Zayed+Rd+Dubai" target="_blank" rel="noopener">
+          <span>Visit</span>
+          <strong>301 White Swan Building,<br/>Sheikh Zayed Rd, Dubai, UAE</strong>
+        </a>
+        <a class="contact__card reveal" href="tel:+97142579718">
+          <span>Call</span>
+          <strong>(04) 257-9718<br/>+971-56-158-5592</strong>
+        </a>
+        <a class="contact__card reveal" href="https://www.taqdeermanpower.com" target="_blank" rel="noopener">
+          <span>Online</span>
+          <strong>www.taqdeermanpower.com</strong>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <svg viewBox="0 0 360 70" class="logo-svg logo-svg--footer" role="img" aria-label="Taqdeer Manpower">
+        <text x="0" y="40" class="logo-svg__taq">TAQDEER</text>
+        <text x="208" y="40" class="logo-svg__man">MANPOWER</text>
+        <text x="1" y="60" class="logo-svg__sub">HUMAN RESOURCES CONSULTANCIES CO. L.L.C</text>
+      </svg>
+      <p class="footer__tag">A trusted global workforce partner since the late 1960s.</p>
+      <nav class="footer__links">
+        <a href="#about">About</a><a href="#footprint">Global Reach</a>
+        <a href="#industries">Industries</a><a href="#contact">Contact</a>
+      </nav>
+      <p class="footer__copy">© <span id="year"></span> Taqdeer Manpower — Human Resources Consultancies Co. L.L.C. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/globe.js"></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
