@@ -3,108 +3,140 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0b1838" />
+  <meta name="theme-color" content="#060b1a" />
   <title>Taqdeer Manpower — Global Workforce & HR Consultancies</title>
   <meta name="description" content="Taqdeer Manpower — a trusted global workforce partner since the late 1960s. Ethical recruitment, compliant deployment and worker welfare across the Middle East, Europe and beyond." />
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- Three.js + GSAP — vendored locally (no CDN dependency at runtime) -->
   <script type="importmap">
-  {
-    "imports": {
-      "three": "./vendor/three.module.js"
-    }
-  }
+  { "imports": { "three": "./vendor/three.module.js" } }
   </script>
   <script src="vendor/gsap.min.js" defer></script>
   <script src="vendor/ScrollTrigger.min.js" defer></script>
 </head>
 <body>
 
+  <a href="#about" class="skip-link">Skip to content</a>
+
+  <!-- ============ SVG ICON SPRITE (Lucide-style, no emoji) ============ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></symbol>
+      <symbol id="i-hardhat" viewBox="0 0 24 24"><path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1Z"/><path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/><path d="M4 15v-3a6 6 0 0 1 6-6"/><path d="M14 6a6 6 0 0 1 6 6v3"/></symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4M10 10h4M10 14h4M10 18h4"/></symbol>
+      <symbol id="i-bed" viewBox="0 0 24 24"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></symbol>
+      <symbol id="i-factory" viewBox="0 0 24 24"><path d="M2 20a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7l-6 4V7l-6 4V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1Z"/><path d="M17 18h1M12 18h1M7 18h1"/></symbol>
+      <symbol id="i-plane" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></symbol>
+      <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+      <symbol id="i-milk" viewBox="0 0 24 24"><path d="M8 2h8"/><path d="M9 2v2.79a4 4 0 0 1-.67 2.22l-.66.98A4 4 0 0 0 7 10.21V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.79a4 4 0 0 0-.67-2.22l-.66-.98A4 4 0 0 1 15 4.79V2"/><path d="M7 15a6.47 6.47 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/></symbol>
+      <symbol id="i-anchor" viewBox="0 0 24 24"><path d="M12 22V8"/><circle cx="12" cy="5" r="3"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5M3 12a9 3 0 0 0 18 0"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.54 21.69a.5.5 0 0 0 .94-.02l6.5-19a.5.5 0 0 0-.64-.64l-19 6.5a.5.5 0 0 0-.02.94l7.93 3.18a2 2 0 0 1 1.11 1.11z"/><path d="M21.85 2.15 10.91 13.09"/></symbol>
+      <symbol id="i-badge" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/></symbol>
+      <symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6M2 9h20"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M13.83 16.57a1 1 0 0 0 1.21-.3l.36-.47A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.47.35a1 1 0 0 0-.29 1.23 14 14 0 0 0 6.39 6.38z"/></symbol>
+      <symbol id="i-link" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+      <symbol id="i-clipboard" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+      <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+      <symbol id="i-buoy" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="m4.93 4.93 4.24 4.24M14.83 14.83l4.24 4.24M14.83 9.17l4.24-4.24M9.17 14.83l-4.24 4.24"/></symbol>
+      <symbol id="i-branch" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><path d="M6 9v6M18 9a9 9 0 0 1-9 9"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+      <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></symbol>
+      <symbol id="i-nav" viewBox="0 0 24 24"><path d="M12 2 19 21l-7-4-7 4z"/></symbol>
+      <symbol id="i-tee" viewBox="0 0 24 24"><path d="M5 6h14v4h-5v8h-4v-8H5z" fill="currentColor" stroke="none"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="progress" id="progress"></div>
+
   <!-- Loader -->
   <div id="loader" class="loader">
-    <div class="loader__mark">
-      <span class="loader__t">T</span>
-    </div>
+    <div class="loader__mark"><svg viewBox="0 0 24 24"><use href="#i-tee"/></svg></div>
     <div class="loader__bar"><span></span></div>
     <p class="loader__text">Building your global network…</p>
   </div>
 
-  <!-- Cursor glow -->
   <div class="cursor-glow" aria-hidden="true"></div>
 
-  <!-- Navigation -->
+  <!-- NAV -->
   <header class="nav" id="nav">
-    <a href="#hero" class="nav__logo" aria-label="Taqdeer Manpower home">
-      <svg viewBox="0 0 360 70" class="logo-svg" role="img" aria-label="Taqdeer Manpower">
-        <text x="0" y="40" class="logo-svg__taq">TAQDEER</text>
-        <text x="208" y="40" class="logo-svg__man">MANPOWER</text>
-        <text x="1" y="60" class="logo-svg__sub">HUMAN RESOURCES CONSULTANCIES CO. L.L.C</text>
+    <a href="#hero" class="nav__logo" aria-label="Taqdeer Manpower — home">
+      <svg viewBox="0 0 360 64" class="logo-svg" role="img" aria-label="Taqdeer Manpower">
+        <text x="0" y="34"><tspan class="logo-svg__taq">TAQDEER</tspan><tspan class="logo-svg__man" dx="8">MANPOWER</tspan></text>
+        <text x="2" y="54" class="logo-svg__sub">HUMAN RESOURCES CONSULTANCIES CO. L.L.C</text>
       </svg>
     </a>
-
-    <nav class="nav__links" id="navLinks">
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
       <a href="#about">About</a>
       <a href="#purpose">Purpose</a>
       <a href="#footprint">Global Reach</a>
       <a href="#industries">Industries</a>
-      <a href="#trades">Trades</a>
       <a href="#edge">Our Edge</a>
       <a href="#contact" class="nav__cta">Get in touch</a>
     </nav>
-
-    <button class="nav__burger" id="burger" aria-label="Toggle menu">
+    <button class="nav__burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
     </button>
   </header>
 
+  <main>
   <!-- HERO -->
   <section class="hero" id="hero">
-    <canvas id="globe-canvas" class="hero__canvas"></canvas>
+    <canvas id="globe-canvas" class="hero__canvas" aria-hidden="true"></canvas>
     <div class="hero__veil"></div>
-
     <div class="hero__content">
-      <p class="hero__eyebrow reveal">EST. LATE 1960s · DUBAI · UAE</p>
+      <span class="pill reveal"><b>EST. 1960s</b> A trusted global workforce partner</span>
       <h1 class="hero__title">
         <span class="reveal-line"><span>Connecting global</span></span>
         <span class="reveal-line"><span>talent to the world's</span></span>
         <span class="reveal-line"><span><em>most iconic</em> projects.</span></span>
       </h1>
       <p class="hero__lead reveal">
-        Taqdeer Manpower is a multi-country, multi-sector workforce conglomerate —
-        delivering compliant, ethical and on-time deployment across the Middle East, Europe and beyond.
+        A multi-country, multi-sector workforce conglomerate — delivering compliant,
+        ethical and on-time deployment across the Middle East, Europe and beyond.
       </p>
       <div class="hero__actions reveal">
-        <a href="#footprint" class="btn btn--gold">Explore our reach</a>
+        <a href="#footprint" class="btn btn--primary">Explore our reach <svg class="icon"><use href="#i-arrow"/></svg></a>
         <a href="#contact" class="btn btn--ghost">Partner with us</a>
       </div>
+    </div>
+    <a href="#about" class="hero__scroll" aria-label="Scroll to content">
+      <span class="hero__mouse"></span><em>Scroll</em>
+    </a>
+  </section>
 
-      <div class="hero__ticker reveal">
-        <div class="ticker">
-          <span>Burj Khalifa</span><i>•</i><span>Burj Al Arab</span><i>•</i><span>Ferrari World</span><i>•</i>
-          <span>NEOM</span><i>•</i><span>Walmart Projects</span><i>•</i><span>ALEC Holdings</span><i>•</i>
-          <span>Burj Khalifa</span><i>•</i><span>Burj Al Arab</span><i>•</i><span>Ferrari World</span><i>•</i>
-          <span>NEOM</span><i>•</i><span>Walmart Projects</span><i>•</i><span>ALEC Holdings</span><i>•</i>
-        </div>
+  <!-- TRUST -->
+  <section class="trust" aria-label="Projects supported">
+    <div class="container trust__inner">
+      <span class="trust__label">People on the world's stage</span>
+      <div class="trust__logos">
+        <span>Burj Khalifa</span><span>Burj Al Arab</span><span>Ferrari World</span>
+        <span>NEOM</span><span>Walmart</span><span>ALEC Holdings</span>
       </div>
     </div>
-
-    <a href="#about" class="hero__scroll" aria-label="Scroll down">
-      <span class="hero__mouse"></span>
-      <em>Scroll</em>
-    </a>
   </section>
 
   <!-- ABOUT -->
   <section class="section about" id="about">
     <div class="container about__grid">
-      <div class="about__head">
-        <span class="kicker reveal">01 — Who we are</span>
+      <div>
+        <span class="eyebrow reveal">01 — Who we are</span>
         <h2 class="reveal">A trusted global partner, <span class="hl">built over five decades.</span></h2>
       </div>
       <div class="about__body">
@@ -114,93 +146,99 @@
           international contractors such as <strong>J&amp;P</strong>.
         </p>
         <p class="reveal">
-          By the late 1980s, the Group expanded into the Kingdom of Saudi Arabia and the United Arab
-          Emirates, laying the foundation for long-term partnerships across the Middle East, Europe
-          and beyond. Today we stand for <strong>scale, compliance, ethical sourcing, worker welfare</strong>
-          and on-time deployment.
+          By the late 1980s we expanded into Saudi Arabia and the UAE, laying the foundation for
+          long-term partnerships across the Middle East, Europe and beyond — today known for
+          <strong>scale, compliance, ethical sourcing and worker welfare</strong>.
         </p>
         <div class="about__chips reveal">
-          <span>Compliance-first</span>
-          <span>Ethical sourcing</span>
-          <span>Worker welfare</span>
-          <span>On-time deployment</span>
+          <span><svg class="icon"><use href="#i-check"/></svg>Compliance-first</span>
+          <span><svg class="icon"><use href="#i-check"/></svg>Ethical sourcing</span>
+          <span><svg class="icon"><use href="#i-check"/></svg>Worker welfare</span>
+          <span><svg class="icon"><use href="#i-check"/></svg>On-time deployment</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- STATS -->
-  <section class="section stats" id="stats">
-    <div class="container stats__grid">
-      <div class="stat reveal">
-        <div class="stat__num" data-count="150" data-suffix="+">0</div>
-        <p>Dedicated internal staff across all locations</p>
-      </div>
-      <div class="stat reveal">
-        <div class="stat__num" data-count="15000" data-suffix="+">0</div>
-        <p>Active workforce database, readily available</p>
-      </div>
-      <div class="stat reveal">
-        <div class="stat__num" data-count="7000" data-suffix="+">0</div>
-        <p>Deployments across the EU, post-COVID</p>
-      </div>
-      <div class="stat reveal">
-        <div class="stat__num" data-count="100" data-suffix="+">0</div>
-        <p>National &amp; international client partnerships</p>
+  <section class="section stats" id="stats" aria-label="Scale and strength">
+    <div class="container">
+      <div class="bento">
+        <article class="cell stat reveal">
+          <div class="cell__icon"><svg class="icon"><use href="#i-users"/></svg></div>
+          <div class="stat__num" data-count="150" data-suffix="+">0</div>
+          <p>Dedicated internal staff across all locations</p>
+        </article>
+        <article class="cell stat reveal">
+          <div class="cell__icon"><svg class="icon"><use href="#i-database"/></svg></div>
+          <div class="stat__num" data-count="15000" data-suffix="+">0</div>
+          <p>Active workforce database, readily available</p>
+        </article>
+        <article class="cell stat stat--wide reveal">
+          <div class="cell__icon"><svg class="icon"><use href="#i-send"/></svg></div>
+          <div class="stat__num stat__num--blue" data-count="15000" data-suffix="">0</div>
+          <p>Deployments in a single year for ALEC Holdings alone — with 7,000+ across the EU post-COVID.</p>
+        </article>
+        <article class="cell stat reveal">
+          <div class="cell__icon"><svg class="icon"><use href="#i-badge"/></svg></div>
+          <div class="stat__num" data-count="100" data-suffix="+">0</div>
+          <p>National &amp; international client partnerships</p>
+        </article>
       </div>
     </div>
-    <p class="stats__note reveal"><span class="hl">15,000</span> deployments in a single year for ALEC Holdings alone.</p>
   </section>
 
-  <!-- PURPOSE: Mission / Vision / Values -->
+  <!-- PURPOSE -->
   <section class="section purpose" id="purpose">
     <div class="container">
       <div class="section__head">
-        <span class="kicker reveal">02 — Our purpose</span>
+        <span class="eyebrow reveal">02 — Our purpose</span>
         <h2 class="reveal">More philanthropy <span class="hl">than profit.</span></h2>
       </div>
-      <div class="purpose__grid">
-        <article class="card tilt reveal">
-          <div class="card__icon">◎</div>
+      <div class="bento">
+        <article class="cell tilt reveal">
+          <div class="cell__icon"><svg class="icon"><use href="#i-target"/></svg></div>
           <h3>Our Mission</h3>
           <p>To deliver cost-effective, timely and compliant manpower solutions while uplifting workforce skills and livelihoods worldwide.</p>
         </article>
-        <article class="card tilt reveal">
-          <div class="card__icon">✦</div>
+        <article class="cell tilt reveal">
+          <div class="cell__icon"><svg class="icon"><use href="#i-eye"/></svg></div>
           <h3>Our Vision</h3>
           <p>To be the most trusted global workforce partner — setting benchmarks in ethical recruitment, quality deployment and worker welfare.</p>
         </article>
-        <article class="card tilt reveal">
-          <div class="card__icon">❖</div>
+        <article class="cell tilt reveal">
+          <div class="cell__icon"><svg class="icon"><use href="#i-gem"/></svg></div>
           <h3>Core Values</h3>
           <ul class="card__values">
-            <li>Integrity</li><li>Transparency</li><li>Safety First</li>
-            <li>Worker Welfare</li><li>Long-term Partnerships</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Integrity</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Transparency</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Safety First</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Worker Welfare</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Long-term Partnerships</li>
           </ul>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- FOOTPRINT (3D globe focus) -->
+  <!-- FOOTPRINT -->
   <section class="section footprint" id="footprint">
-    <canvas id="globe-canvas-2" class="footprint__canvas"></canvas>
+    <canvas id="globe-canvas-2" class="footprint__canvas" aria-hidden="true"></canvas>
     <div class="container footprint__inner">
       <div class="footprint__copy">
-        <span class="kicker reveal">03 — Global deployment footprint</span>
+        <span class="eyebrow reveal">03 — Global deployment footprint</span>
         <h2 class="reveal">We move skilled people <span class="hl">where the world is building.</span></h2>
-        <p class="reveal">Successfully deployed across four continents — sourcing talent from ten nations and placing it on the projects defining tomorrow's skylines.</p>
-
+        <p class="lead reveal">Deployed across four continents — sourcing talent from ten nations and placing it on the projects defining tomorrow's skylines.</p>
         <div class="footprint__cols reveal">
           <div>
-            <h4>We deploy to</h4>
+            <h4><svg class="icon"><use href="#i-nav"/></svg>We deploy to</h4>
             <ul class="taglist">
               <li>Australia</li><li>USA</li><li>UK</li><li>KSA</li><li>UAE</li><li>Qatar</li>
               <li>Oman</li><li>Bahrain</li><li>Kuwait</li><li>Poland</li><li>Serbia</li><li>Romania</li>
             </ul>
           </div>
           <div>
-            <h4>We recruit from</h4>
+            <h4><svg class="icon"><use href="#i-users"/></svg>We recruit from</h4>
             <ul class="taglist taglist--gold">
               <li>India</li><li>Pakistan</li><li>Bangladesh</li><li>Nepal</li><li>Sri Lanka</li>
               <li>Philippines</li><li>Egypt</li><li>Uganda</li><li>Nigeria</li><li>Kenya</li>
@@ -211,34 +249,32 @@
     </div>
   </section>
 
-  <!-- LANDMARK PROJECTS -->
+  <!-- PROJECTS -->
   <section class="section projects" id="projects">
     <div class="container">
       <div class="section__head">
-        <span class="kicker reveal">04 — Landmark projects supported</span>
+        <span class="eyebrow reveal">04 — Landmark projects supported</span>
         <h2 class="reveal">Our people, <span class="hl">on the world's stage.</span></h2>
       </div>
-      <div class="projects__grid">
-        <article class="project project--xl reveal" style="--i:0">
-          <span class="project__tag">Dubai, UAE</span>
-          <h3>Burj Khalifa</h3>
-          <p>The world's tallest building.</p>
+      <div class="bento">
+        <article class="cell project project--xl reveal">
+          <span class="project__tag"><svg class="icon"><use href="#i-pin"/></svg>Dubai, UAE</span>
+          <h3>Burj Khalifa</h3><p>The world's tallest building.</p>
         </article>
-        <article class="project reveal" style="--i:1">
-          <span class="project__tag">Dubai, UAE</span>
+        <article class="cell project project--md reveal">
+          <span class="project__tag"><svg class="icon"><use href="#i-pin"/></svg>Dubai</span>
           <h3>Burj Al Arab</h3>
         </article>
-        <article class="project reveal" style="--i:2">
-          <span class="project__tag">Abu Dhabi, UAE</span>
+        <article class="cell project project--md reveal">
+          <span class="project__tag"><svg class="icon"><use href="#i-pin"/></svg>Abu Dhabi</span>
           <h3>Ferrari World</h3>
         </article>
-        <article class="project project--wide reveal" style="--i:3">
-          <span class="project__tag">Saudi Arabia</span>
-          <h3>NEOM</h3>
-          <p>The giga-project reimagining how we live.</p>
+        <article class="cell project project--wide reveal">
+          <span class="project__tag"><svg class="icon"><use href="#i-pin"/></svg>Saudi Arabia</span>
+          <h3>NEOM</h3><p>The giga-project reimagining how we live.</p>
         </article>
-        <article class="project reveal" style="--i:4">
-          <span class="project__tag">USA &amp; International</span>
+        <article class="cell project project--wide reveal">
+          <span class="project__tag"><svg class="icon"><use href="#i-pin"/></svg>USA &amp; International</span>
           <h3>Walmart Projects</h3>
         </article>
       </div>
@@ -249,22 +285,22 @@
   <section class="section industries" id="industries">
     <div class="container">
       <div class="section__head">
-        <span class="kicker reveal">05 — Industries &amp; sectors served</span>
+        <span class="eyebrow reveal">05 — Industries &amp; sectors served</span>
         <h2 class="reveal">Complete coverage, <span class="hl">across the economy.</span></h2>
       </div>
-      <div class="industries__grid">
-        <div class="ind reveal" style="--i:0"><i>⛽</i><span>Oil &amp; Gas</span></div>
-        <div class="ind reveal" style="--i:1"><i>🏗️</i><span>Construction &amp; Infrastructure</span></div>
-        <div class="ind reveal" style="--i:2"><i>⚙️</i><span>MEP &amp; Electro-Mechanical</span></div>
-        <div class="ind reveal" style="--i:3"><i>🏢</i><span>Facilities Management</span></div>
-        <div class="ind reveal" style="--i:4"><i>🏨</i><span>Hospitality, Hotels &amp; Resorts</span></div>
-        <div class="ind reveal" style="--i:5"><i>🏭</i><span>Food &amp; Manufacturing</span></div>
-        <div class="ind reveal" style="--i:6"><i>✈️</i><span>Aviation</span></div>
-        <div class="ind reveal" style="--i:7"><i>🚚</i><span>Logistics &amp; Delivery</span></div>
-        <div class="ind reveal" style="--i:8"><i>🥛</i><span>Dairy &amp; Food Processing</span></div>
-        <div class="ind reveal" style="--i:9"><i>🚢</i><span>Seaports &amp; Shipyards</span></div>
-        <div class="ind reveal" style="--i:10"><i>☀️</i><span>Solar &amp; Renewable Energy</span></div>
-        <div class="ind reveal" style="--i:11"><i>🌐</i><span>And beyond</span></div>
+      <div class="bento">
+        <div class="cell ind reveal"><div class="cell__icon"><svg class="icon"><use href="#i-droplet"/></svg></div><span>Oil &amp; Gas</span></div>
+        <div class="cell ind reveal"><div class="cell__icon"><svg class="icon"><use href="#i-hardhat"/></svg></div><span>Construction &amp; Infrastructure</span></div>
+        <div class="cell ind reveal"><div class="cell__icon"><svg class="icon"><use href="#i-zap"/></svg></div><span>MEP &amp; Electro-Mechanical</span></div>
+        <div class="cell ind reveal"><div class="cell__icon"><svg class="icon"><use href="#i-building"/></svg></div><span>Facilities Management</span></div>
+        <div class="cell ind reveal"><div class="cell__icon"><svg class="icon"><use href="#i-bed"/></svg></div><span>Hospitality, Hotels &amp; Resorts</span></div>
+        <div class="cell ind reveal"><div class="cell__icon"><svg class="icon"><use href="#i-factory"/></svg></div><span>Food &amp; Manufacturing</span></div>
+        <div class="cell ind reveal"><div class="cell__icon"><svg class="icon"><use href="#i-plane"/></svg></div><span>Aviation</span></div>
+        <div class="cell ind reveal"><div class="cell__icon"><svg class="icon"><use href="#i-truck"/></svg></div><span>Logistics &amp; Delivery</span></div>
+        <div class="cell ind reveal"><div class="cell__icon"><svg class="icon"><use href="#i-milk"/></svg></div><span>Dairy &amp; Food Processing</span></div>
+        <div class="cell ind reveal"><div class="cell__icon"><svg class="icon"><use href="#i-anchor"/></svg></div><span>Seaports &amp; Shipyards</span></div>
+        <div class="cell ind reveal"><div class="cell__icon"><svg class="icon"><use href="#i-sun"/></svg></div><span>Solar &amp; Renewable Energy</span></div>
+        <div class="cell ind reveal"><div class="cell__icon"><svg class="icon"><use href="#i-globe"/></svg></div><span>And beyond</span></div>
       </div>
     </div>
   </section>
@@ -273,67 +309,58 @@
   <section class="section trades" id="trades">
     <div class="container">
       <div class="section__head">
-        <span class="kicker reveal">06 — Trades &amp; skill categories</span>
+        <span class="eyebrow reveal">06 — Trades &amp; skill categories</span>
         <h2 class="reveal">Every trade, <span class="hl">tested and ready.</span></h2>
-        <p class="section__sub reveal">We supply complete trade coverage, including but not limited to:</p>
-      </div>
-      <div class="trades__marquee">
-        <div class="trades__track">
-          <span>Electricians</span><span>Plumbers</span><span>Masons</span><span>Steel Fixers</span>
-          <span>Carpenters</span><span>Welders</span><span>HVAC Technicians</span><span>Pipe Fitters</span>
-          <span>Scaffolders</span><span>Operators</span><span>Helpers &amp; General Workforce</span>
-          <span>Electricians</span><span>Plumbers</span><span>Masons</span><span>Steel Fixers</span>
-          <span>Carpenters</span><span>Welders</span><span>HVAC Technicians</span><span>Pipe Fitters</span>
-          <span>Scaffolders</span><span>Operators</span><span>Helpers &amp; General Workforce</span>
-        </div>
-      </div>
-      <div class="trades__marquee trades__marquee--rev">
-        <div class="trades__track">
-          <span>Pipe Fitters</span><span>Welders</span><span>Carpenters</span><span>Steel Fixers</span>
-          <span>Masons</span><span>Plumbers</span><span>Electricians</span><span>Operators</span>
-          <span>Scaffolders</span><span>HVAC Technicians</span><span>Helpers &amp; General Workforce</span>
-          <span>Pipe Fitters</span><span>Welders</span><span>Carpenters</span><span>Steel Fixers</span>
-          <span>Masons</span><span>Plumbers</span><span>Electricians</span><span>Operators</span>
-          <span>Scaffolders</span><span>HVAC Technicians</span><span>Helpers &amp; General Workforce</span>
-        </div>
+        <p class="muted reveal" style="margin-top:var(--s-3)">Complete trade coverage, including but not limited to:</p>
       </div>
     </div>
+    <div class="marquee" aria-hidden="true"><div class="marquee__track">
+      <span>Electricians</span><span>Plumbers</span><span>Masons</span><span>Steel Fixers</span><span>Carpenters</span><span>Welders</span><span>HVAC Technicians</span><span>Pipe Fitters</span><span>Scaffolders</span><span>Operators</span><span>Helpers &amp; General Workforce</span>
+      <span>Electricians</span><span>Plumbers</span><span>Masons</span><span>Steel Fixers</span><span>Carpenters</span><span>Welders</span><span>HVAC Technicians</span><span>Pipe Fitters</span><span>Scaffolders</span><span>Operators</span><span>Helpers &amp; General Workforce</span>
+    </div></div>
+    <div class="marquee marquee--rev" aria-hidden="true"><div class="marquee__track">
+      <span>Pipe Fitters</span><span>Welders</span><span>Carpenters</span><span>Steel Fixers</span><span>Masons</span><span>Plumbers</span><span>Electricians</span><span>Operators</span><span>Scaffolders</span><span>HVAC Technicians</span><span>Helpers &amp; General Workforce</span>
+      <span>Pipe Fitters</span><span>Welders</span><span>Carpenters</span><span>Steel Fixers</span><span>Masons</span><span>Plumbers</span><span>Electricians</span><span>Operators</span><span>Scaffolders</span><span>HVAC Technicians</span><span>Helpers &amp; General Workforce</span>
+    </div></div>
   </section>
 
-  <!-- EDGE / Differentiators -->
+  <!-- EDGE -->
   <section class="section edge" id="edge">
     <div class="container">
       <div class="section__head">
-        <span class="kicker reveal">07 — Our key differentiators</span>
+        <span class="eyebrow reveal">07 — Our key differentiators</span>
         <h2 class="reveal">Why partners <span class="hl">choose Taqdeer.</span></h2>
       </div>
-      <div class="edge__grid">
-        <article class="edge__card reveal">
+      <div class="bento">
+        <article class="cell reveal">
+          <div class="cell__icon"><svg class="icon"><use href="#i-branch"/></svg></div>
           <h3>Direct Sourcing Model</h3>
           <p>Among the very few agencies in India that rely <strong>exclusively on direct candidate sourcing</strong>.</p>
           <ul class="ticks">
-            <li>No sub-agents</li>
-            <li>No intermediaries</li>
-            <li>Ground-level recruitment for full transparency &amp; control</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>No sub-agents</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>No intermediaries</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Ground-level recruitment for full transparency &amp; control</li>
           </ul>
         </article>
-        <article class="edge__card reveal">
+        <article class="cell reveal">
+          <div class="cell__icon"><svg class="icon"><use href="#i-shield"/></svg></div>
           <h3>Worker-First Philosophy</h3>
           <p>For us, this business is <strong>more philanthropy than profit</strong>.</p>
           <ul class="ticks">
-            <li>Worker welfare &amp; safety as top priority</li>
-            <li>Ethical recruitment practices</li>
-            <li>Zero exploitation policy</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Worker welfare &amp; safety as top priority</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Ethical recruitment practices</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Zero exploitation policy</li>
           </ul>
         </article>
-        <article class="edge__card edge__card--wide reveal">
+        <article class="cell cell--wide reveal">
+          <div class="cell__icon"><svg class="icon"><use href="#i-cap"/></svg></div>
           <h3>In-House Trade Test &amp; Training Centers</h3>
           <p>HRBS &amp; Bhatia Trade Test Centers — an <strong>18,000+ sq. ft.</strong> fully air-conditioned facility equipped for multiple trades simultaneously, with complete tools and testing infrastructure at international standards.</p>
           <ul class="ticks ticks--row">
-            <li>Free pre-deployment training</li>
-            <li>Higher productivity from day one</li>
-            <li>NSDC &amp; Punjab Skill Development tie-ups</li>
-            <li>PSB / NSDC accreditation in progress</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Free pre-deployment training</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Higher productivity from day one</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>NSDC &amp; Punjab Skill Development tie-ups</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>PSB / NSDC accreditation in progress</li>
           </ul>
         </article>
       </div>
@@ -344,15 +371,15 @@
   <section class="section process" id="process">
     <div class="container">
       <div class="section__head">
-        <span class="kicker reveal">08 — Recruitment, deployment &amp; support</span>
+        <span class="eyebrow reveal">08 — Recruitment, deployment &amp; support</span>
         <h2 class="reveal">A process built <span class="hl">to be trusted.</span></h2>
       </div>
       <ol class="timeline">
-        <li class="reveal"><span class="timeline__no">01</span><h4>CV Screening</h4><p>Thorough vetting against role requirements.</p></li>
-        <li class="reveal"><span class="timeline__no">02</span><h4>In-Person Trade Tests &amp; Interviews</h4><p>Practical skill assessment plus Zoom interviews.</p></li>
-        <li class="reveal"><span class="timeline__no">03</span><h4>Candidate Briefing</h4><p>Job role, salary &amp; benefits, work culture and company policies.</p></li>
-        <li class="reveal"><span class="timeline__no">04</span><h4>On-Time Deployment</h4><p>Commitment to schedule, with free replacement if a candidate fails to travel after visa issuance.</p></li>
-        <li class="reveal"><span class="timeline__no">05</span><h4>24/7 Post-Deployment Support</h4><p>Resignation handling, termination cases, behavioral &amp; compliance issues.</p></li>
+        <li class="reveal"><span class="timeline__no"><svg class="icon"><use href="#i-search"/></svg></span><h4>CV Screening</h4><p>Thorough vetting against role requirements.</p></li>
+        <li class="reveal"><span class="timeline__no"><svg class="icon"><use href="#i-clipboard"/></svg></span><h4>In-Person Trade Tests &amp; Interviews</h4><p>Practical skill assessment plus Zoom interviews.</p></li>
+        <li class="reveal"><span class="timeline__no"><svg class="icon"><use href="#i-message"/></svg></span><h4>Candidate Briefing</h4><p>Job role, salary &amp; benefits, work culture and company policies.</p></li>
+        <li class="reveal"><span class="timeline__no"><svg class="icon"><use href="#i-send"/></svg></span><h4>On-Time Deployment</h4><p>Commitment to schedule, with free replacement if a candidate fails to travel after visa issuance.</p></li>
+        <li class="reveal"><span class="timeline__no"><svg class="icon"><use href="#i-buoy"/></svg></span><h4>24/7 Post-Deployment Support</h4><p>Resignation handling, termination cases, behavioral &amp; compliance issues.</p></li>
       </ol>
     </div>
   </section>
@@ -361,40 +388,40 @@
   <section class="section contact" id="contact">
     <div class="container contact__inner">
       <div class="contact__copy">
-        <span class="kicker reveal">09 — Let's build together</span>
+        <span class="eyebrow reveal">09 — Let's build together</span>
         <h2 class="reveal">Ready to deploy <span class="hl">your workforce?</span></h2>
-        <p class="reveal">Tell us what you're building. We'll bring the people to build it — compliantly, ethically and on time.</p>
-        <a href="mailto:info@taqdeermanpower.com" class="btn btn--gold reveal">info@taqdeermanpower.com</a>
+        <p class="lead reveal">Tell us what you're building. We'll bring the people to build it — compliantly, ethically and on time.</p>
+        <a href="mailto:info@taqdeermanpower.com" class="btn btn--primary reveal">info@taqdeermanpower.com <svg class="icon"><use href="#i-arrow-ur"/></svg></a>
       </div>
       <div class="contact__cards">
         <a class="contact__card reveal" href="https://www.google.com/maps/search/?api=1&query=Sheikh+Zayed+Rd+Dubai" target="_blank" rel="noopener">
-          <span>Visit</span>
-          <strong>301 White Swan Building,<br/>Sheikh Zayed Rd, Dubai, UAE</strong>
+          <div class="cell__icon"><svg class="icon"><use href="#i-pin"/></svg></div>
+          <div><span>Visit</span><strong>301 White Swan Building, Sheikh Zayed Rd, Dubai, UAE</strong></div>
         </a>
         <a class="contact__card reveal" href="tel:+97142579718">
-          <span>Call</span>
-          <strong>(04) 257-9718<br/>+971-56-158-5592</strong>
+          <div class="cell__icon"><svg class="icon"><use href="#i-phone"/></svg></div>
+          <div><span>Call</span><strong>(04) 257-9718 · +971-56-158-5592</strong></div>
         </a>
         <a class="contact__card reveal" href="https://www.taqdeermanpower.com" target="_blank" rel="noopener">
-          <span>Online</span>
-          <strong>www.taqdeermanpower.com</strong>
+          <div class="cell__icon"><svg class="icon"><use href="#i-link"/></svg></div>
+          <div><span>Online</span><strong>www.taqdeermanpower.com</strong></div>
         </a>
       </div>
     </div>
   </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer__inner">
-      <svg viewBox="0 0 360 70" class="logo-svg logo-svg--footer" role="img" aria-label="Taqdeer Manpower">
-        <text x="0" y="40" class="logo-svg__taq">TAQDEER</text>
-        <text x="208" y="40" class="logo-svg__man">MANPOWER</text>
-        <text x="1" y="60" class="logo-svg__sub">HUMAN RESOURCES CONSULTANCIES CO. L.L.C</text>
+      <svg viewBox="0 0 360 64" class="logo-svg" role="img" aria-label="Taqdeer Manpower">
+        <text x="0" y="34"><tspan class="logo-svg__taq">TAQDEER</tspan><tspan class="logo-svg__man" dx="8">MANPOWER</tspan></text>
+        <text x="2" y="54" class="logo-svg__sub">HUMAN RESOURCES CONSULTANCIES CO. L.L.C</text>
       </svg>
       <p class="footer__tag">A trusted global workforce partner since the late 1960s.</p>
-      <nav class="footer__links">
+      <nav class="footer__links" aria-label="Footer">
         <a href="#about">About</a><a href="#footprint">Global Reach</a>
-        <a href="#industries">Industries</a><a href="#contact">Contact</a>
+        <a href="#industries">Industries</a><a href="#edge">Our Edge</a><a href="#contact">Contact</a>
       </nav>
       <p class="footer__copy">© <span id="year"></span> Taqdeer Manpower — Human Resources Consultancies Co. L.L.C. All rights reserved.</p>
     </div>

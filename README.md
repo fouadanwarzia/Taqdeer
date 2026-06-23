@@ -7,6 +7,14 @@ company profile.
 ![Brand](https://img.shields.io/badge/brand-Taqdeer%20Manpower-274798)
 ![Accent](https://img.shields.io/badge/accent-Gold%20%23EEBE0D-EEBE0D)
 
+> **Design system v2** — rebuilt with the
+> [UI/UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)
+> methodology: industry-aligned for corporate/staffing/industrial B2B,
+> anti-patterns avoided (no emoji icons → 34 inline SVG icons; no AI gradients),
+> accessibility-first (4.5:1 contrast, `:focus-visible`, 44px targets,
+> reduced-motion), an 8px spacing rhythm, a curated **Bricolage Grotesque + Inter**
+> type pairing, and bento-grid layouts.
+
 ## Highlights
 
 - **Interactive 3D globe** (Three.js) — a gold point-globe with navy/gold

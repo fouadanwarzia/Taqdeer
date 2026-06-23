@@ -25,18 +25,28 @@
   const burger = document.getElementById('burger');
   const navLinks = document.getElementById('navLinks');
 
+  const progress = document.getElementById('progress');
   const onScroll = () => {
     if (window.scrollY > 40) nav.classList.add('scrolled');
     else nav.classList.remove('scrolled');
+    if (progress) {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+    }
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
   if (burger) {
-    burger.addEventListener('click', () => nav.classList.toggle('open'));
+    const setOpen = (open) => {
+      nav.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', String(open));
+    };
+    burger.addEventListener('click', () => setOpen(!nav.classList.contains('open')));
     navLinks.querySelectorAll('a').forEach(a =>
-      a.addEventListener('click', () => nav.classList.remove('open'))
+      a.addEventListener('click', () => setOpen(false))
     );
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
   }
 
   /* ---------- Reveal on scroll ---------- */
