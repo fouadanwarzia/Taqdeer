@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#081820">
+  <title>Q Mobility · LIVEX 2026</title>
+  <link rel="preload" href="assets/img/q-mobility-logo.svg" as="image">
+  <link rel="preload" href="assets/fonts/inter-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <!-- SVG icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-left" viewBox="0 0 24 24"><path d="M20 12H4.5M11 5l-7 7 7 7"/></symbol>
+      <symbol id="i-right" viewBox="0 0 24 24"><path d="M4 12h15.5M13 5l7 7-7 7"/></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="M2.5 11 12 2.5l9.5 8.5M5 9v11.5h5V15h4v5.5h5V9"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+      <symbol id="i-gate" viewBox="0 0 32 32"><path d="M2.5 8.5h27M3.5 5.5h25v6h-25zM5.5 11.5v16M26.5 11.5v16"/><path d="M10 25.5v-4.8l1.6-4.2h8.8l1.6 4.2v4.8H10zM10 21h12M12.5 25.5v1.8M19.5 25.5v1.8"/><circle cx="13" cy="23" r=".6"/><circle cx="19" cy="23" r=".6"/></symbol>
+      <symbol id="i-camera" viewBox="0 0 32 32"><path d="M4 10.5h5.5l2.2-3.5h8.6l2.2 3.5H28v15H4z"/><circle cx="16" cy="18" r="4.6"/><path d="M24 13.5h1"/></symbol>
+      <symbol id="i-park" viewBox="0 0 32 32"><rect x="4" y="9" width="17" height="19" rx="3.5"/><path d="M10 23.5v-10h4a3 3 0 0 1 0 6h-4"/><path d="M22.5 8.5a5 5 0 0 1 4 4M23.5 4.5a9 9 0 0 1 7 7"/></symbol>
+      <symbol id="i-wallet" viewBox="0 0 32 32"><path d="M6 10.5 20.5 5l2 5.5"/><path d="M4.5 11.5c0-1 .8-1.5 1.8-1.5H25a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6.5a2 2 0 0 1-2-2z"/><path d="M27 16h-5.5a2.5 2.5 0 0 0 0 5H27z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.6 7-12.2A7 7 0 0 0 5 9.8C5 15.4 12 22 12 22z"/><circle cx="12" cy="9.8" r="2.6"/></symbol>
+      <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 4 3 6.5v13.5l6-2.5 6 2.5 6-2.5V4l-6 2.5z M9 4v13.5M15 6.5V20"/></symbol>
+    </defs>
+  </svg>
+
+  <div id="viewport">
+    <main id="stage" aria-live="polite">
+
+      <!-- ============ HOME / ATTRACT ============ -->
+      <section class="screen screen--home" data-screen="home" aria-label="Welcome">
+        <div class="home-bg">
+          <div class="home-glow"></div>
+          <svg class="home-lines" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M-50 860 C 400 760, 700 980, 1000 880 S 1600 700, 1980 820"/>
+            <path d="M-50 930 C 360 860, 760 1030, 1060 950 S 1560 800, 1980 900"/>
+            <path d="M-50 1000 C 420 940, 820 1080, 1100 1010 S 1600 900, 1980 980"/>
+          </svg>
+        </div>
+        <div class="home-content">
+          <img class="home-logo reveal" style="--d:.1s" src="assets/img/q-mobility-logo.svg" alt="Q Mobility">
+          <div class="home-actions">
+            <button class="glass-btn reveal" style="--d:.45s" data-go="network">About Us</button>
+            <button class="glass-btn reveal" style="--d:.6s" data-go="explore">Touch to Explore</button>
+          </div>
+          <p class="home-hint reveal" style="--d:1s"><span class="tap-dot"></span>Touch a button to begin</p>
+        </div>
+        <div class="footer-mark reveal" style="--d:.9s">Q Mobility · LIVEX 2026</div>
+      </section>
+
+      <!-- ============ SLIDE 1 · NETWORK ============ -->
+      <section class="screen screen--network" data-screen="network" aria-label="Our network">
+        <div class="bg-photo kenburns" style="background-image:url(assets/img/abu-dhabi-aerial.jpg)"></div>
+        <div class="network-shade"></div>
+
+        <header class="brandbar reveal" style="--d:.05s">
+          <img src="assets/img/q-mobility-logo.svg" alt="Q Mobility">
+          <span class="brandbar__rule"></span>
+          <span class="brandbar__tag">Abu Dhabi's smart mobility operator</span>
+        </header>
+
+        <div class="headline">
+          <h1 class="reveal" style="--d:.15s">6 toll gates. 250,000+ parking spaces.</h1>
+          <p class="reveal" style="--d:.28s">One integrated mobility network across Abu Dhabi.</p>
+        </div>
+
+        <div class="stat-cards">
+          <button class="stat-card reveal-up" style="--d:.45s" data-go="explore" aria-label="Road toll DARB: 6 toll gates. View on map">
+            <span class="stat-card__label">Road toll <i>·</i> DARB</span>
+            <span class="stat-card__num" data-count="6">6</span>
+            <span class="stat-card__title">Toll gates</span>
+            <span class="stat-card__desc">4 intercity gates. 2 city peripheral gates.</span>
+          </button>
+          <button class="stat-card reveal-up" style="--d:.58s" data-go="technology" aria-label="Parking: 250,000+ parking spaces">
+            <span class="stat-card__label">Parking</span>
+            <span class="stat-card__num" data-count="250000" data-suffix="+">250,000+</span>
+            <span class="stat-card__title">Parking spaces</span>
+            <span class="stat-card__desc">Public and private parking across the city.</span>
+          </button>
+          <button class="stat-card stat-card--link reveal-up" style="--d:.71s" data-go="explore" aria-label="View the Abu Dhabi network map">
+            <span class="stat-card__label">Abu Dhabi network</span>
+            <span class="stat-card__body">Tolling and parking across key corridors and destinations.</span>
+            <span class="stat-card__cta">View map <b>&gt;</b></span>
+          </button>
+        </div>
+
+        <div class="footer-mark">Q Mobility · LIVEX 2026</div>
+      </section>
+
+      <!-- ============ SLIDE 2 · TECHNOLOGY ============ -->
+      <section class="screen screen--tech" data-screen="technology" aria-label="Technology">
+        <div class="bg-photo kenburns kenburns--soft" style="background-image:url(assets/img/technology-scene.jpg)"></div>
+        <div class="tech-shade"></div>
+
+        <!-- beacon dots on the scene -->
+        <span class="beacon" style="left:560px;top:418px"></span>
+        <span class="beacon" style="left:1402px;top:241px"></span>
+        <span class="beacon" style="left:1505px;top:401px"></span>
+        <span class="beacon" style="left:244px;top:777px"></span>
+
+        <header class="brandbar brandbar--mono reveal" style="--d:.05s">
+          <img src="assets/img/q-mobility-logo.svg" alt="Q Mobility">
+          <span class="brandbar__rule"></span>
+          <span class="brandbar__tag">Abu Dhabi's smart mobility operator</span>
+        </header>
+
+        <div class="headline headline--tech">
+          <h1 class="reveal" style="--d:.15s">Powered by the latest technology.</h1>
+          <p class="reveal" style="--d:.28s">AI-enabled devices, SmartPark, App and Wallet.</p>
+        </div>
+
+        <button class="callout reveal-pop" style="--d:.5s;left:418px;top:278px;width:352px" data-detail="darb">
+          <svg class="callout__icon"><use href="#i-gate"/></svg>
+          <span class="callout__text"><b>DARB toll gates</b>Integrated tolling across Abu&nbsp;Dhabi.</span>
+        </button>
+        <button class="callout reveal-pop" style="--d:.65s;left:1508px;top:78px;width:364px" data-detail="ai">
+          <svg class="callout__icon"><use href="#i-camera"/></svg>
+          <span class="callout__text"><b>AI-enabled devices</b>Smarter sensing and real-time guidance.</span>
+        </button>
+        <button class="callout reveal-pop" style="--d:.8s;left:1541px;top:379px;width:345px" data-detail="smartpark">
+          <svg class="callout__icon"><use href="#i-park"/></svg>
+          <span class="callout__text"><b>SmartPark</b>Intelligent parking touchpoints across the city.</span>
+        </button>
+        <button class="callout reveal-pop" style="--d:.95s;left:310px;top:806px;width:394px" data-detail="app">
+          <svg class="callout__icon"><use href="#i-wallet"/></svg>
+          <span class="callout__text"><b>App + Wallet</b>Seamless access, payment and account management.</span>
+        </button>
+
+        <p class="tap-hint reveal" style="--d:1.3s"><span class="tap-dot"></span>Tap a highlight to learn more</p>
+        <div class="footer-mark footer-mark--mono">Q Mobility · LIVEX 2026</div>
+      </section>
+
+      <!-- ============ SLIDE 3 · CLOSING ============ -->
+      <section class="screen screen--closing" data-screen="closing" aria-label="Mobility for a better life">
+        <div class="closing-bg"></div>
+        <div class="closing-content">
+          <img class="closing-logo reveal" style="--d:.15s" src="assets/img/q-mobility-logo.svg" alt="Q Mobility">
+          <p class="closing-tagline reveal" style="--d:.5s">Mobility for a better life</p>
+        </div>
+      </section>
+
+      <!-- ============ EXPLORE · TOLL GATE MAP ============ -->
+      <section class="screen screen--map" data-screen="explore" aria-label="Abu Dhabi toll gate map">
+        <header class="brandbar reveal" style="--d:.05s">
+          <img src="assets/img/q-mobility-logo.svg" alt="Q Mobility">
+          <span class="brandbar__rule"></span>
+          <span class="brandbar__tag">Abu Dhabi's smart mobility operator</span>
+        </header>
+
+        <aside class="map-side">
+          <p class="eyebrow reveal" style="--d:.12s">DARB · Road toll network</p>
+          <h1 class="map-title reveal" style="--d:.2s">6 toll gates across Abu&nbsp;Dhabi.</h1>
+          <p class="map-sub reveal" style="--d:.28s">Tap a gate on the map or in the list.</p>
+          <ol class="gate-list" id="gateList"></ol>
+        </aside>
+
+        <div class="map-frame reveal-up" style="--d:.2s">
+          <div class="map-canvas" id="mapCanvas">
+            <img src="assets/img/toll-gates-map.jpg" alt="Map of Abu Dhabi showing the six DARB toll gates" draggable="false">
+            <div id="mapPins"></div>
+          </div>
+          <div class="gate-card" id="gateCard" hidden>
+            <button class="gate-card__close" aria-label="Close"><svg><use href="#i-close"/></svg></button>
+            <div class="gate-card__photo" id="gateCardPhoto"></div>
+            <div class="gate-card__body">
+              <span class="eyebrow">DARB toll gate</span>
+              <h2 id="gateCardName"></h2>
+              <p class="gate-card__ar" id="gateCardAr" lang="ar" dir="rtl"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-mark">Q Mobility · LIVEX 2026</div>
+      </section>
+
+      <!-- ============ DETAIL SHEET (technology) ============ -->
+      <div class="sheet" id="sheet" hidden>
+        <div class="sheet__scrim" data-close></div>
+        <article class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+          <button class="sheet__close" data-close aria-label="Close"><svg><use href="#i-close"/></svg></button>
+          <div class="sheet__media" id="sheetMedia"></div>
+          <div class="sheet__body">
+            <div class="sheet__head">
+              <svg class="sheet__icon" id="sheetIcon"><use href="#i-gate"/></svg>
+              <span class="eyebrow eyebrow--mono" id="sheetEyebrow"></span>
+            </div>
+            <h2 id="sheetTitle"></h2>
+            <p id="sheetText"></p>
+            <ul class="sheet__facts" id="sheetFacts"></ul>
+            <button class="text-link" id="sheetAction" hidden></button>
+          </div>
+        </article>
+      </div>
+
+      <!-- ============ PERSISTENT NAV ============ -->
+      <nav class="nav" id="nav" aria-label="Slide navigation">
+        <button class="nav-btn" data-nav="prev" aria-label="Previous"><svg><use href="#i-left"/></svg></button>
+        <button class="nav-btn" data-nav="home" aria-label="Home"><svg><use href="#i-home"/></svg></button>
+        <button class="nav-btn nav-btn--active" data-nav="next" aria-label="Next"><svg><use href="#i-right"/></svg></button>
+      </nav>
+
+      <div class="progress" id="progress" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="idle-bar" id="idleBar" aria-hidden="true"></div>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
