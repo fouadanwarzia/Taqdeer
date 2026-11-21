@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="vendor/lenis.css">
-<link rel="stylesheet" href="css/style.css?v=6">
+<link rel="stylesheet" href="css/style.css?v=7">
 </head>
 <body class="is-loading">
 
@@ -51,44 +51,49 @@
 
 <main id="top">
 
-<!-- ================= HERO ================= -->
-<section class="hero" data-cursor="Next">
-  <div class="hero__frame">
-    <div class="hero__slides">
-      <figure class="slide is-active" data-label="Skilled crews · Dubai">
-        <img src="img/hero-team.jpg" data-m="img/hero-mobile-team.jpg" alt="Taqdeer crew walking on a Dubai high-rise site">
-      </figure>
-      <figure class="slide" data-label="Landmark projects · UAE">
-        <img src="img/hero-cranes.jpg" data-m="img/hero-mobile-cranes.jpg" alt="Taqdeer engineers on a tower under construction">
-      </figure>
-      <figure class="slide" data-label="Site leadership · On time">
-        <img src="img/briefing.jpg" alt="Site engineer briefing a Taqdeer team">
-      </figure>
-    </div>
+<!-- ================= HERO (scroll-driven film) ================= -->
+<!--
+  Frames: copy your frame folders into  frames/desktop/  and  frames/mobile/
+  (file names: ezgif-frame-001.jpg ... ezgif-frame-240.jpg).
+  data-frames  = number of frames in each folder
+  data-step-*  = use every Nth frame (2 = half the download, still smooth)
+-->
+<section class="hero" id="hero"
+  data-frames="240"
+  data-desktop="frames/desktop/ezgif-frame-" data-step-desktop="1"
+  data-mobile="frames/mobile/ezgif-frame-" data-step-mobile="2">
+  <div class="hero__sticky">
+    <canvas class="hero__canvas" aria-label="Aerial film: empty land becomes a finished tower"></canvas>
     <div class="hero__shade"></div>
-    <div class="hero__glow" aria-hidden="true"></div>
-  </div>
 
-  <div class="hero__content wrap">
-    <p class="hero__kicker"><span class="line"></span>Since the 1960s · Dubai</p>
-    <h1 class="hero__title">
-      <span class="ln"><span>We build the teams</span></span>
-      <span class="ln"><span>that build the <em class="serif">world.</em></span></span>
-    </h1>
-    <div class="hero__row">
-      <a href="#contact" class="btn btn--gold magnetic"><span>Hire talent</span><i>→</i></a>
-      <a href="#about" class="btn btn--glass magnetic"><span>Discover Taqdeer</span></a>
+    <div class="beat beat--1 wrap">
+      <p class="hero__kicker"><span class="line"></span>Since the 1960s · Dubai</p>
+      <h1 class="hero__title">
+        <span class="ln"><span>We build the teams</span></span>
+        <span class="ln"><span>that build the <em class="serif">world.</em></span></span>
+      </h1>
+      <div class="hero__row">
+        <a href="#contact" class="btn btn--gold magnetic"><span>Hire talent</span><i>→</i></a>
+        <a href="#about" class="btn btn--glass magnetic"><span>Discover Taqdeer</span></a>
+      </div>
     </div>
-  </div>
 
-  <div class="hero__nav" aria-label="Slides">
-    <button class="thumb is-active" data-i="0" aria-label="Slide 1"><img src="img/hero-team.jpg" alt=""><span><small>01</small>Skilled crews</span><i></i></button>
-    <button class="thumb" data-i="1" aria-label="Slide 2"><img src="img/hero-cranes.jpg" alt=""><span><small>02</small>Landmarks</span><i></i></button>
-    <button class="thumb" data-i="2" aria-label="Slide 3"><img src="img/briefing.jpg" alt=""><span><small>03</small>Leadership</span><i></i></button>
-  </div>
+    <div class="beat beat--2 wrap" aria-hidden="true">
+      <p class="hero__kicker"><span class="line"></span>Skilled hands</p>
+      <p class="beat__title"><span class="ln"><span>Raised</span></span><span class="ln"><span><em class="serif">floor by floor.</em></span></span></p>
+    </div>
 
-  <div class="hero__label"><b>01</b><span class="hero__labeltxt">Skilled crews · Dubai</span></div>
-  <div class="hero__scroll" aria-hidden="true"><i></i></div>
+    <div class="beat beat--3 wrap" aria-hidden="true">
+      <p class="hero__kicker"><span class="line"></span>Delivered on time</p>
+      <p class="beat__title"><span class="ln"><span>From empty land</span></span><span class="ln"><span>to <em class="serif">landmark.</em></span></span></p>
+    </div>
+
+    <div class="hero__meter" aria-hidden="true">
+      <div class="meter__steps"><span class="is-on">Land</span><span>Build</span><span>Deliver</span></div>
+      <div class="meter__bar"><i></i></div>
+    </div>
+    <div class="hero__hint" aria-hidden="true"><span>Scroll</span><i></i></div>
+  </div>
 </section>
 
 <!-- ================= LANDMARKS BAND ================= -->
@@ -262,6 +267,7 @@
 <script src="vendor/gsap.min.js"></script>
 <script src="vendor/ScrollTrigger.min.js"></script>
 <script src="vendor/lenis.min.js"></script>
-<script src="js/main.js?v=6"></script>
+<script src="js/sequence.js?v=7"></script>
+<script src="js/main.js?v=7"></script>
 </body>
 </html>

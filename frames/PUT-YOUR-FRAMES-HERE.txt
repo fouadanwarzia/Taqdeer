@@ -1,0 +1,7 @@
+Copy ALL your video frames into these two folders (keep the ezgif names):
+
+  frames/desktop/ezgif-frame-001.jpg ... ezgif-frame-240.jpg   (1920x1080, desktop + tablet)
+  frames/mobile/ezgif-frame-001.jpg  ... ezgif-frame-240.jpg   (720x1280, phones)
+
+Only frames 001, 120 and 240 are included here as samples.
+If you change the number of frames, update data-frames="240" in index.html (hero section).
