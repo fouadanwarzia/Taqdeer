@@ -28,7 +28,7 @@
   window.addEventListener("scroll", navState, { passive: true }); navState();
 
   /* ----- fallback ----- */
-  if (typeof window.gsap === "undefined" || reduce) {
+  if (typeof window.gsap === "undefined") {
     document.body.classList.remove("is-loading");
     var l = $(".loader"); if (l) l.remove();
     $$("[data-count]").forEach(function (el) { el.textContent = fmt(+el.dataset.count) + (el.dataset.suffix || ""); });
@@ -37,7 +37,7 @@
   gsap.registerPlugin(ScrollTrigger);
 
   /* ----- smooth scroll ----- */
-  if (window.Lenis) {
+  if (window.Lenis && !reduce) {
     lenis = new Lenis({ duration: 1.15, smoothWheel: true });
     lenis.on("scroll", ScrollTrigger.update);
     gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
