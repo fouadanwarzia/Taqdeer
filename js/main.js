@@ -106,23 +106,31 @@
       .to([".beat--1 .hero__kicker", ".hero__row > *", ".hero__meter", ".hero__hint"], { autoAlpha: 1, y: 0, duration: 1, ease: "expo.out", stagger: .07 }, "-=1.3");
   }
 
-  /* text moments synced to the film */
+  /* text moments synced to the film:
+     start (short) -> pure film -> middle (short) -> pure film -> end (stays) */
   var b2 = $$(".beat--2 .ln > span"), b3 = $$(".beat--3 .ln > span");
   var steps3 = $$(".meter__steps span");
-  gsap.timeline({ scrollTrigger: { trigger: hero, start: "top top", end: "bottom bottom", scrub: .6,
+  gsap.timeline({ scrollTrigger: { trigger: hero, start: "top top", end: "bottom bottom", scrub: .5,
     onUpdate: function (s) {
       gsap.set(".meter__bar i", { scaleX: s.progress });
-      var k = s.progress < .36 ? 0 : s.progress < .7 ? 1 : 2;
+      var k = s.progress < .34 ? 0 : s.progress < .72 ? 1 : 2;
       steps3.forEach(function (el, i) { el.classList.toggle("is-on", i === k); });
     } } })
-    .to(".hero__hint", { autoAlpha: 0, duration: .05 }, .05)
-    .to(".beat--1", { autoAlpha: 0, y: -80, duration: .08, ease: "power2.in" }, .2)
-    .fromTo(".beat--2", { autoAlpha: 0 }, { autoAlpha: 1, duration: .01 }, .34)
-    .fromTo(b2, { yPercent: 110 }, { yPercent: 0, duration: .08, stagger: .02, ease: "power3.out" }, .34)
-    .to(".beat--2", { autoAlpha: 0, y: -80, duration: .08, ease: "power2.in" }, .58)
-    .fromTo(".beat--3", { autoAlpha: 0 }, { autoAlpha: 1, duration: .01 }, .7)
-    .fromTo(b3, { yPercent: 110 }, { yPercent: 0, duration: .08, stagger: .02, ease: "power3.out" }, .7)
-    .to({}, { duration: .1 }, .9);
+    .to(".hero__hint", { autoAlpha: 0, duration: .03 }, .03)
+    /* 1 · opening text leaves after the first few frames */
+    .to(".beat--1", { autoAlpha: 0, y: -90, duration: .05, ease: "power2.in" }, .06)
+    .to(".hero__shade", { opacity: .15, duration: .05 }, .07)
+    /* 2 · middle text, briefly */
+    .to(".hero__shade", { opacity: 1, duration: .04 }, .45)
+    .fromTo(".beat--2", { autoAlpha: 0 }, { autoAlpha: 1, duration: .01 }, .46)
+    .fromTo(b2, { yPercent: 110 }, { yPercent: 0, duration: .05, stagger: .015, ease: "power3.out" }, .46)
+    .to(".beat--2", { autoAlpha: 0, y: -90, duration: .05, ease: "power2.in" }, .57)
+    .to(".hero__shade", { opacity: .15, duration: .05 }, .58)
+    /* 3 · closing text arrives near the end and stays */
+    .to(".hero__shade", { opacity: 1, duration: .05 }, .86)
+    .fromTo(".beat--3", { autoAlpha: 0 }, { autoAlpha: 1, duration: .01 }, .87)
+    .fromTo(b3, { yPercent: 110 }, { yPercent: 0, duration: .06, stagger: .015, ease: "power3.out" }, .87)
+    .to({}, { duration: .01 }, .99);
 
   /* ----- nav hide on scroll down + progress ----- */
   var last = 0;

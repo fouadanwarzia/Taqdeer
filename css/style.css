@@ -115,7 +115,7 @@ button{font:inherit}
 @media (max-width:980px){.nav__links,.nav__pill > .btn{display:none}.nav__burger{display:block}.nav__pill{padding:8px 8px 8px 20px}}
 
 /* ---------- HERO (scroll film) ---------- */
-.hero{position:relative;height:420vh;background:var(--navy);color:#fff}
+.hero{position:relative;height:640vh;background:var(--navy);color:#fff}
 .hero__sticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
 .hero__canvas{position:absolute;inset:0;width:100%;height:100%;display:block;background:var(--navy) url("../frames/desktop/ezgif-frame-001.jpg") center/cover no-repeat}
 .hero__shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(7,18,89,.7) 0%,rgba(7,18,89,.3) 40%,rgba(7,18,89,0) 65%),linear-gradient(0deg,rgba(7,18,89,.6) 0%,rgba(7,18,89,0) 35%),linear-gradient(180deg,rgba(7,18,89,.45),rgba(7,18,89,0) 22%)}
@@ -137,7 +137,7 @@ button{font:inherit}
 .hero__hint i::after{content:"";position:absolute;left:0;top:0;width:100%;height:40%;background:var(--gold);animation:drip 2s var(--ease) infinite}
 @keyframes drip{0%{transform:translateY(-100%)}100%{transform:translateY(260%)}}
 @media (max-width:860px){
-  .hero{height:360vh}
+  .hero{height:540vh}
   .hero__canvas{background-image:url("../frames/mobile/ezgif-frame-001.jpg")}
   .hero__shade{background:linear-gradient(0deg,rgba(7,18,89,.9) 0%,rgba(7,18,89,.45) 42%,rgba(7,18,89,0) 70%),linear-gradient(180deg,rgba(7,18,89,.5),rgba(7,18,89,0) 25%)}
   .beat{bottom:110px}

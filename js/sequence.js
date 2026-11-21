@@ -70,16 +70,23 @@
   }
   window.addEventListener("resize", resize);
 
-  var drawn = -1;
+  /* interactive camera: slow push-in with scroll, drift with the mouse */
+  var mx = 0, my = 0, ox = 0, oy = 0;
+  if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    window.addEventListener("mousemove", function (e) {
+      mx = e.clientX / window.innerWidth - .5; my = e.clientY / window.innerHeight - .5;
+    });
+  }
   function draw(i) {
     var k = nearest(i);
     if (k < 0) return;
-    if (k === drawn && !needsDraw) return;
     var im = frames[k];
-    var s = Math.max(cw / im.naturalWidth, ch / im.naturalHeight);
+    ox += (mx - ox) * .06; oy += (my - oy) * .06;
+    var zoom = 1.04 + progress * .1;
+    var s = Math.max(cw / im.naturalWidth, ch / im.naturalHeight) * zoom;
     var w = im.naturalWidth * s, h = im.naturalHeight * s;
-    ctx.drawImage(im, (cw - w) / 2, (ch - h) / 2, w, h);
-    drawn = k; needsDraw = false;
+    var px = (cw - w) / 2 - ox * (w - cw) * .9, py = (ch - h) / 2 - oy * (h - ch) * .9;
+    ctx.drawImage(im, px, py, w, h);
   }
 
   /* scroll progress through the hero (0 → 1) */
@@ -95,7 +102,7 @@
     var r = measure();
     if (r.bottom > -50 && r.top < window.innerHeight + 50) {
       var target = progress * (COUNT - 1);
-      current += (target - current) * 0.22;            // smooth catch-up
+      current += (target - current) * 0.18;            // smooth catch-up
       if (Math.abs(target - current) < 0.01) current = target;
       draw(Math.round(current));
     }
