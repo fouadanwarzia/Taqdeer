@@ -3,7 +3,7 @@
 Static website (plain HTML/CSS/JS, no build step) for **Taqdeer Manpower Human Resources Consultancies Co. L.L.C**.
 
 ## Run locally
-Double-click `index.html` (works offline, including the 3D globe), or serve the folder:
+Double-click `index.html` (works offline), or serve the folder:
 ```
 python -m http.server 8000
 ```
@@ -15,8 +15,6 @@ Upload everything in this folder (`index.html`, `css/`, `js/`, `vendor/`, `img/`
 ```
 index.html        page content
 css/style.css     design (colours at the top: --blue, --gold)
-js/globe.js       3D globe (three.js)
-js/land.js        world map dots for the globe
 js/main.js        scroll animations (GSAP + ScrollTrigger + Lenis)
 img/              brand photography + 3D icons (img/icons/)
 images/           logo, favicon, client logos

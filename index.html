@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Taqdeer Manpower — Building the World's Workforce</title>
+<title>Taqdeer Manpower — We Build the Teams That Build the World</title>
 <meta name="description" content="Taqdeer Manpower — ethical, direct-sourced skilled manpower from 10 countries to 12. Construction, oil & gas, MEP, hospitality, facilities, logistics. Dubai, UAE.">
-<meta name="theme-color" content="#f4f7ff">
+<meta name="theme-color" content="#071259">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="vendor/lenis.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -17,18 +17,20 @@
 
 <!-- Loader -->
 <div class="loader" aria-hidden="true">
-  <div class="loader__ring"><img src="img/icons/global.png" alt=""></div>
-  <img src="images/logo.png" alt="" class="loader__logo">
+  <img src="images/logo-white.png" alt="" class="loader__logo">
   <div class="loader__bar"><span></span></div>
 </div>
 
-<div class="cursor" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__txt"></span></div>
 <div class="progress" aria-hidden="true"></div>
 
 <!-- Nav -->
-<header class="nav">
+<header class="nav is-light">
   <div class="nav__pill">
-    <a href="#top" class="nav__logo" aria-label="Taqdeer Manpower home"><img src="images/logo.png" alt="Taqdeer Manpower"></a>
+    <a href="#top" class="nav__logo" aria-label="Taqdeer Manpower home">
+      <img src="images/logo-white.png" alt="Taqdeer Manpower" class="logo-w">
+      <img src="images/logo.png" alt="" class="logo-c" aria-hidden="true">
+    </a>
     <nav class="nav__links" aria-label="Main">
       <a href="#about">About</a>
       <a href="#industries">Industries</a>
@@ -36,7 +38,7 @@
       <a href="#reach">Reach</a>
       <a href="#clients">Clients</a>
     </nav>
-    <a href="#contact" class="btn btn--blue btn--sm magnetic"><span>Hire talent</span></a>
+    <a href="#contact" class="btn btn--gold btn--sm magnetic"><span>Hire talent</span></a>
     <button class="nav__burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
   </div>
 </header>
@@ -50,141 +52,107 @@
 <main id="top">
 
 <!-- ================= HERO ================= -->
-<section class="hero">
-  <div class="hero__bg" aria-hidden="true">
-    <span class="blob blob--a"></span><span class="blob blob--b"></span><span class="blob blob--c"></span>
-    <div class="hero__grid"></div>
+<section class="hero" data-cursor="Next">
+  <div class="hero__frame">
+    <div class="hero__slides">
+      <figure class="slide is-active" data-label="Skilled crews · Dubai">
+        <img src="img/hero-team.jpg" data-m="img/hero-mobile-team.jpg" alt="Taqdeer crew walking on a Dubai high-rise site">
+      </figure>
+      <figure class="slide" data-label="Landmark projects · UAE">
+        <img src="img/hero-cranes.jpg" data-m="img/hero-mobile-cranes.jpg" alt="Taqdeer engineers on a tower under construction">
+      </figure>
+      <figure class="slide" data-label="Site leadership · On time">
+        <img src="img/briefing.jpg" alt="Site engineer briefing a Taqdeer team">
+      </figure>
+    </div>
+    <div class="hero__shade"></div>
+    <div class="hero__glow" aria-hidden="true"></div>
   </div>
 
-  <div class="wrap hero__inner">
-    <div class="hero__copy">
-      <span class="chip reveal-h"><i class="chip__dot"></i>Since the 1960s · Dubai, UAE</span>
-      <h1 class="hero__title">
-        <span class="ln"><span>Building the</span></span>
-        <span class="ln"><span>world's <em class="hl">workforce</em></span></span>
-      </h1>
-      <p class="hero__sub reveal-h">Ethical. Direct. On time.</p>
-      <div class="hero__ctas reveal-h">
-        <a href="#contact" class="btn btn--blue magnetic"><span>Hire talent</span><i>→</i></a>
-        <a href="#reach" class="btn btn--ghost magnetic"><span>Our reach</span></a>
-      </div>
-      <div class="hero__stats reveal-h">
-        <div><b data-count="15000" data-suffix="+">0</b><small>Ready workforce</small></div>
-        <div><b data-count="12">0</b><small>Countries served</small></div>
-        <div><b data-count="100" data-suffix="+">0</b><small>Partners</small></div>
-      </div>
-    </div>
-
-    <div class="hero__3d">
-      <canvas id="globe" aria-label="3D globe showing Taqdeer's sourcing and deployment network"></canvas>
-      <div class="float-chip float-chip--a"><img src="img/icons/recruitment.png" alt=""><div><b>10</b><small>Source countries</small></div></div>
-      <div class="float-chip float-chip--b"><img src="img/icons/global.png" alt=""><div><b>12</b><small>Deployed to</small></div></div>
-      <div class="float-chip float-chip--c"><img src="img/icons/safety.png" alt=""><div><b>Zero</b><small>Sub-agents</small></div></div>
+  <div class="hero__content wrap">
+    <p class="hero__kicker"><span class="line"></span>Since the 1960s · Dubai</p>
+    <h1 class="hero__title">
+      <span class="ln"><span>We build the teams</span></span>
+      <span class="ln"><span>that build the <em class="serif">world.</em></span></span>
+    </h1>
+    <div class="hero__row">
+      <a href="#contact" class="btn btn--gold magnetic"><span>Hire talent</span><i>→</i></a>
+      <a href="#about" class="btn btn--glass magnetic"><span>Discover Taqdeer</span></a>
     </div>
   </div>
 
-  <!-- image that grows on scroll -->
-  <div class="hero__reel">
-    <div class="reel">
-      <img src="img/hero-team.jpg" alt="Taqdeer workforce on site in Dubai" class="reel__img reel__img--d">
-      <img src="img/hero-mobile-team.jpg" alt="" class="reel__img reel__img--m">
-      <div class="reel__tag"><img src="img/icons/construction.png" alt=""><span>On site across 12 countries</span></div>
-    </div>
+  <div class="hero__nav" aria-label="Slides">
+    <button class="thumb is-active" data-i="0" aria-label="Slide 1"><img src="img/hero-team.jpg" alt=""><span><small>01</small>Skilled crews</span><i></i></button>
+    <button class="thumb" data-i="1" aria-label="Slide 2"><img src="img/hero-cranes.jpg" alt=""><span><small>02</small>Landmarks</span><i></i></button>
+    <button class="thumb" data-i="2" aria-label="Slide 3"><img src="img/briefing.jpg" alt=""><span><small>03</small>Leadership</span><i></i></button>
+  </div>
+
+  <div class="hero__label"><b>01</b><span class="hero__labeltxt">Skilled crews · Dubai</span></div>
+  <div class="hero__scroll" aria-hidden="true"><i></i></div>
+</section>
+
+<!-- ================= LANDMARKS BAND ================= -->
+<section class="band" aria-label="Landmark projects supported">
+  <div class="band__track">
+    <span>Burj Khalifa</span><i>✦</i><span>Burj Al Arab</span><i>✦</i><span>Ferrari World</span><i>✦</i><span>NEOM</span><i>✦</i><span>Walmart</span><i>✦</i>
   </div>
 </section>
 
-<!-- ================= LOGO STRIP ================= -->
-<section class="strip" aria-label="Clients">
-  <div class="strip__track">
-    <img src="images/logos/strabag.png" alt="Strabag"><img src="images/logos/alec.png" alt="ALEC"><img src="images/logos/binghatti.png" alt="Binghatti"><img src="images/logos/sobha.png" alt="Sobha"><img src="images/logos/azizi.png" alt="Azizi"><img src="images/logos/kaefer.png" alt="Kaefer"><img src="images/logos/alemco.png" alt="Alemco"><img src="images/logos/target.png" alt="Target"><img src="images/logos/therme.png" alt="Therme"><img src="images/logos/drake.png" alt="Drake &amp; Scull"><img src="images/logos/jp.png" alt="J&amp;P"><img src="images/logos/alhabtoor.png" alt="Al Habtoor"><img src="images/logos/kier.png" alt="Kier">
-  </div>
-</section>
-
-<!-- ================= ABOUT (bento) ================= -->
+<!-- ================= ABOUT ================= -->
 <section class="about" id="about">
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">About</span>
-      <h2 class="h2 split">Six decades of <em class="hl">trusted</em> talent.</h2>
+      <h2 class="h2 split">Six decades of <em class="serif">trusted</em> talent.</h2>
     </div>
-
     <div class="bento">
       <figure class="tile tile--photo tile--tall tilt"><img src="img/team.jpg" alt="Taqdeer facilities team"><figcaption>Skilled. Uniformed. Ready.</figcaption></figure>
-
       <div class="tile tile--blue tilt">
-        <img src="img/icons/recruitment.png" alt="" class="tile__icon">
-        <b class="tile__num"><span data-count="60">0</span>+</b>
-        <span class="tile__label">Years of legacy</span>
+        <b class="tile__num"><span data-count="60">0</span><sup>+</sup></b>
+        <span class="tile__label">Years of legacy, from Libya &amp; Iraq to 12 countries.</span>
       </div>
-
-      <div class="tile tile--gold tilt">
-        <img src="img/icons/construction.png" alt="" class="tile__icon">
-        <b class="tile__num"><span data-count="15000">0</span>+</b>
-        <span class="tile__label">Ready workforce</span>
-      </div>
-
       <figure class="tile tile--photo tile--wide tilt"><img src="img/consult.jpg" alt="Client consultation"><figcaption>Partners, not suppliers.</figcaption></figure>
-
       <figure class="tile tile--photo tilt"><img src="img/office.jpg" alt="Taqdeer office team"></figure>
-
-      <div class="tile tile--white tilt">
+      <div class="tile tile--white tile--wide tilt">
+        <div class="mini"><b data-count="15000" data-suffix="+">0</b><span>Ready workforce</span></div>
         <div class="mini"><b data-count="150" data-suffix="+">0</b><span>Internal staff</span></div>
         <div class="mini"><b data-count="7000" data-suffix="+">0</b><span>EU deployments</span></div>
-        <div class="mini"><b data-count="15000">0</b><span>ALEC, one year</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= INDUSTRIES (horizontal) ================= -->
+<!-- ================= INDUSTRIES ================= -->
 <section class="industries" id="industries">
   <div class="industries__pin">
     <div class="wrap head head--row">
       <div>
         <span class="eyebrow">Industries</span>
-        <h2 class="h2 split">Every sector. <em class="hl">One partner.</em></h2>
+        <h2 class="h2 split">Every sector. <em class="serif">One partner.</em></h2>
       </div>
       <div class="hbar" aria-hidden="true"><span></span></div>
     </div>
     <div class="rail">
-      <article class="icard"><div class="icard__img"><img src="img/briefing.jpg" alt=""></div><img src="img/icons/construction.png" alt="" class="icard__icon"><h3>Construction</h3><p>Infrastructure · Civil</p></article>
+      <article class="icard"><div class="icard__img"><img src="img/mep.jpg" alt=""></div><img src="img/icons/construction.png" alt="" class="icard__icon"><h3>Construction &amp; MEP</h3><p>Civil · Electrical · HVAC</p></article>
       <article class="icard"><div class="icard__img"><img src="img/oilgas.jpg" alt=""></div><img src="img/icons/oilgas.png" alt="" class="icard__icon"><h3>Oil &amp; Gas</h3><p>Refineries · Rigging</p></article>
-      <article class="icard"><div class="icard__img"><img src="img/mep.jpg" alt=""></div><img src="img/icons/facilities.png" alt="" class="icard__icon"><h3>MEP</h3><p>Electrical · HVAC · Plumbing</p></article>
       <article class="icard"><div class="icard__img"><img src="img/chef.jpg" alt=""></div><img src="img/icons/hospitality.png" alt="" class="icard__icon"><h3>Hospitality</h3><p>Hotels · Resorts · F&amp;B</p></article>
-      <article class="icard"><div class="icard__img"><img src="img/staff.jpg" alt=""></div><img src="img/icons/safety.png" alt="" class="icard__icon"><h3>Facilities</h3><p>Security · Maintenance</p></article>
+      <article class="icard"><div class="icard__img"><img src="img/staff.jpg" alt=""></div><img src="img/icons/facilities.png" alt="" class="icard__icon"><h3>Facilities</h3><p>Security · Maintenance</p></article>
       <article class="icard"><div class="icard__img"><img src="img/logistics.jpg" alt=""></div><img src="img/icons/logistics.png" alt="" class="icard__icon"><h3>Logistics</h3><p>Warehousing · Delivery</p></article>
       <article class="icard"><div class="icard__img"><img src="img/driver.jpg" alt=""></div><img src="img/icons/transport.png" alt="" class="icard__icon"><h3>Transport</h3><p>Drivers · Operators</p></article>
       <article class="icard icard--more">
-        <span>+5 more</span>
+        <span>+5</span>
         <ul><li>Aviation</li><li>Seaports</li><li>Solar</li><li>Manufacturing</li><li>Food processing</li></ul>
-        <a href="#contact" class="btn btn--gold magnetic"><span>Talk to us</span><i>→</i></a>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ================= SHOWCASE (zoom) ================= -->
-<section class="show">
-  <div class="show__pin">
-    <div class="show__frame">
-      <img src="img/hero-cranes.jpg" alt="Taqdeer crews on a Dubai high-rise" class="show__img show__img--d">
-      <img src="img/hero-mobile-cranes.jpg" alt="" class="show__img show__img--m">
-      <div class="show__shade"></div>
-      <div class="show__copy">
-        <span class="eyebrow eyebrow--light">Landmarks</span>
-        <h2 class="show__title">Built by<br>our people.</h2>
-      </div>
-      <div class="show__marquee"><div class="show__track"><span>Burj Khalifa</span><i></i><span>Burj Al Arab</span><i></i><span>Ferrari World</span><i></i><span>NEOM</span><i></i><span>Walmart</span><i></i></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PROCESS (sticky split) ================= -->
+<!-- ================= PROCESS ================= -->
 <section class="process" id="process">
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">Process</span>
-      <h2 class="h2 split">CV to site in <em class="hl">five steps.</em></h2>
+      <h2 class="h2 split">CV to site in <em class="serif">five steps.</em></h2>
     </div>
     <div class="split-view">
       <div class="sv__media">
@@ -198,17 +166,17 @@
         <div class="sv__count"><b>01</b><span>/ 05</span></div>
       </div>
       <ol class="sv__steps">
-        <li class="step is-on"><img src="img/icons/recruitment.png" alt="" class="step__icon"><div><span>01</span><h3>Screen &amp; interview</h3><p>Direct sourcing. No sub-agents.</p></div><img src="img/interview.jpg" alt="" class="step__m"></li>
-        <li class="step"><img src="img/icons/construction.png" alt="" class="step__icon"><div><span>02</span><h3>Trade test</h3><p>18,000+ sq.ft test center.</p></div><img src="img/welding.jpg" alt="" class="step__m"></li>
-        <li class="step"><img src="img/icons/visa.png" alt="" class="step__icon"><div><span>03</span><h3>Visa &amp; briefing</h3><p>Role, salary, culture, policy.</p></div><img src="img/passport.jpg" alt="" class="step__m"></li>
-        <li class="step"><img src="img/icons/global.png" alt="" class="step__icon"><div><span>04</span><h3>On-time deployment</h3><p>Free replacement guarantee.</p></div><img src="img/airport.jpg" alt="" class="step__m"></li>
-        <li class="step"><img src="img/icons/safety.png" alt="" class="step__icon"><div><span>05</span><h3>24/7 support</h3><p>Welfare first. Always.</p></div><img src="img/welfare.jpg" alt="" class="step__m"></li>
+        <li class="step is-on"><span class="step__n">01</span><div><h3>Screen &amp; interview</h3><p>Direct sourcing. No sub-agents.</p></div><img src="img/interview.jpg" alt="" class="step__m"></li>
+        <li class="step"><span class="step__n">02</span><div><h3>Trade test</h3><p>18,000+ sq.ft test center.</p></div><img src="img/welding.jpg" alt="" class="step__m"></li>
+        <li class="step"><span class="step__n">03</span><div><h3>Visa &amp; briefing</h3><p>Role, salary, culture, policy.</p></div><img src="img/passport.jpg" alt="" class="step__m"></li>
+        <li class="step"><span class="step__n">04</span><div><h3>On-time deployment</h3><p>Free replacement guarantee.</p></div><img src="img/airport.jpg" alt="" class="step__m"></li>
+        <li class="step"><span class="step__n">05</span><div><h3>24/7 support</h3><p>Welfare first. Always.</p></div><img src="img/welfare.jpg" alt="" class="step__m"></li>
       </ol>
     </div>
   </div>
 </section>
 
-<!-- ================= REACH (one dark moment) ================= -->
+<!-- ================= REACH ================= -->
 <section class="reach" id="reach">
   <img src="img/globe.jpg" alt="" class="reach__bg">
   <div class="wrap reach__inner">
@@ -232,10 +200,9 @@
   <div class="wrap">
     <div class="head head--center">
       <span class="eyebrow">Why Taqdeer</span>
-      <h2 class="h2 split">People <em class="hl">first.</em> Always.</h2>
+      <h2 class="h2 split">People <em class="serif">first.</em> Always.</h2>
     </div>
     <div class="why__grid">
-      <figure class="why__photo tilt"><img src="img/welfare.jpg" alt="Workers relaxing at accommodation"><figcaption>Worker welfare is our first priority.</figcaption></figure>
       <div class="why__card tilt"><img src="img/icons/global.png" alt=""><h3>Direct sourcing</h3><p>No intermediaries.</p></div>
       <div class="why__card tilt"><img src="img/icons/safety.png" alt=""><h3>Zero exploitation</h3><p>Ethical by design.</p></div>
       <div class="why__card tilt"><img src="img/icons/visa.png" alt=""><h3>Fully compliant</h3><p>Visa to site.</p></div>
@@ -249,7 +216,7 @@
   <div class="wrap">
     <div class="head head--center">
       <span class="eyebrow">Clients &amp; legacy</span>
-      <h2 class="h2 split">Trusted by <em class="hl">builders.</em></h2>
+      <h2 class="h2 split">Trusted by <em class="serif">builders.</em></h2>
     </div>
     <div class="logo-grid">
       <img src="images/logos/strabag.png" alt="Strabag"><img src="images/logos/alec.png" alt="ALEC"><img src="images/logos/binghatti.png" alt="Binghatti"><img src="images/logos/sobha.png" alt="Sobha"><img src="images/logos/azizi.png" alt="Azizi"><img src="images/logos/kaefer.png" alt="Kaefer"><img src="images/logos/alemco.png" alt="Alemco"><img src="images/logos/target.png" alt="Target"><img src="images/logos/therme.png" alt="Therme Bucuresti"><img src="images/logos/tazz.png" alt="Tazz by eMAG"><img src="images/logos/drake.png" alt="Drake &amp; Scull"><img src="images/logos/adprecast.png" alt="Abu Dhabi Precast"><img src="images/logos/electromontaj.png" alt="Electromontaj"><img src="images/logos/arcada.png" alt="Arcada"><img src="images/logos/alrakha.png" alt="Al Rakha"><img src="images/logos/jp.png" alt="J&amp;P"><img src="images/logos/ghantoot.png" alt="Ghantoot"><img src="images/logos/carillion.png" alt="Al-Futtaim Carillion"><img src="images/logos/alhabtoor.png" alt="Al Habtoor"><img src="images/logos/kele.png" alt="Kele"><img src="images/logos/kier.png" alt="Kier"><img src="images/logos/bir.png" alt="BIR"><img src="images/logos/hrbhatia.png" alt="HR Bhatia"><img src="images/logos/alecholdings.png" alt="ALEC Holdings">
@@ -263,14 +230,12 @@
     <div class="cta">
       <img src="img/wave.jpg" alt="" class="cta__bg">
       <div class="cta__body">
-        <h2 class="cta__title split">Let's build<br>your team.</h2>
+        <h2 class="cta__title split">Let's build <em class="serif">your team.</em></h2>
         <div class="cta__btns">
           <a href="tel:+971561585592" class="btn btn--gold magnetic"><span>+971 56 158 5592</span></a>
           <a href="mailto:info@taqdeermanpower.com" class="btn btn--glass magnetic"><span>info@taqdeermanpower.com</span></a>
         </div>
       </div>
-      <img src="img/icons/global.png" alt="" class="cta__icon cta__icon--a">
-      <img src="img/icons/construction.png" alt="" class="cta__icon cta__icon--b">
     </div>
     <div class="info">
       <div><small>Office</small><b>301 White Swan Building, Sheikh Zayed Rd, Dubai</b></div>
@@ -294,12 +259,9 @@
   <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7a10.7 10.7 0 0 1-5.5-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.5 6.5 0 0 0 1.3 3.4 14.8 14.8 0 0 0 5.7 5c2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>
 </a>
 
-<script src="vendor/three.min.js"></script>
 <script src="vendor/gsap.min.js"></script>
 <script src="vendor/ScrollTrigger.min.js"></script>
 <script src="vendor/lenis.min.js"></script>
-<script src="js/land.js"></script>
-<script src="js/globe.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
